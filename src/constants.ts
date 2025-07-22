@@ -1,12 +1,4 @@
-// import type { DropdownChoice } from '@companion-module/base'
-
-export type DropdownChoiceId = string | number
-export interface DropdownChoice {
-	/** Value of the option */
-	id: DropdownChoiceId
-	/** Label to show to users */
-	label: string
-}
+import type { DropdownChoice } from '@companion-module/base'
 
 export interface DropdownChoiceWithButtonText extends DropdownChoice {
 	buttonText: string

@@ -9,11 +9,11 @@ export function UpdateActions(self: ModuleInstance): void {
 			name: 'Test Stream Connection',
 			options: [
 				{
-					id: 'startTranscribing',
+					id: 'testRemoteConnection',
 					type: 'dropdown',
 					label: 'Action type',
 					choices: CONFCAPCOMMANDS,
-					default: 'startTranscribing',
+					default: 'testRemoteConnection',
 				},
 			],
 			callback: async (event) => {
@@ -38,16 +38,70 @@ export function UpdateActions(self: ModuleInstance): void {
 			name: 'Test Localhost Connection',
 			options: [
 				{
-					id: 'showCaptions',
+					id: 'testLocalConnection',
 					type: 'dropdown',
 					label: 'Action type',
 					choices: CONFCAPCOMMANDS,
-					default: 'showCaptions',
+					default: 'testLocalConnection',
 				},
 			],
 			callback: async (event) => {
 				console.log('get_localhost action triggered', event)
 				const apiUrl = self.config.localhostUrl.replace('index.html', 'stream/LiteGetStream')
+				const response = await fetch(apiUrl, {
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				})
+				if (response.status == 200) {
+					self.updateStatus(InstanceStatus.Ok)
+				} else {
+					self.updateStatus(InstanceStatus.ConnectionFailure)
+				}
+			},
+		},
+		start_transcribing: {
+			name: 'Start transcribing',
+			options: [
+				{
+					id: 'startTranscribing',
+					type: 'dropdown',
+					label: 'Action type',
+					choices: CONFCAPCOMMANDS,
+					default: 'startTranscribing',
+				},
+			],
+			callback: async (event) => {
+				console.log('get_localhost action triggered', event)
+				const apiUrl = self.config.localhostUrl.replace('index.html', 'start')
+				const response = await fetch(apiUrl, {
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				})
+				if (response.status == 200) {
+					self.updateStatus(InstanceStatus.Ok)
+				} else {
+					self.updateStatus(InstanceStatus.ConnectionFailure)
+				}
+			},
+		},
+		stop_transcribing: {
+			name: 'Stop transcribing',
+			options: [
+				{
+					id: 'stopTranscribing',
+					type: 'dropdown',
+					label: 'Action type',
+					choices: CONFCAPCOMMANDS,
+					default: 'stopTranscribing',
+				},
+			],
+			callback: async (event) => {
+				console.log('get_localhost action triggered', event)
+				const apiUrl = self.config.localhostUrl.replace('index.html', 'stop')
 				const response = await fetch(apiUrl, {
 					method: 'GET',
 					headers: {

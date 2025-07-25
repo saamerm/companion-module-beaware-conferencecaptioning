@@ -5,8 +5,8 @@
 	"description": "Control ConferenceCaptioning's on-device transcription and translation AI service",
 	"version": "1.0.1",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-conference-captioning.git",
-	"bugs": "https://github.com/bitfocus/companion-module-conference-captioning/issues",
+	"repository": "git+https://github.com/bitfocus/companion-module-beaware-conferencecaptioning.git",
+	"bugs": "https://github.com/bitfocus/companion-module-beaware-conferencecaptioning/issues",
 	"maintainers": [
 		{
 			"name": "Saamer Mansoor",

@@ -1,5 +1,5 @@
 {
-	"name": "companion-module-conference-captioning",
+	"name": "companion-module-beaware-conferencecaptioning",
 	"version": "1.0.1",
 	"main": "dist/main.js",
 	"type": "module",
@@ -16,7 +16,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-conference-captioning.git"
+		"url": "git+https://github.com/bitfocus/companion-module-beaware-conferencecaptioning.git"
 	},
 	"engines": {
 		"node": "^22.14",

@@ -1,6 +1,6 @@
 {
-	"id": "conference-captioning",
-	"name": "conference-captioning",
+	"id": "beaware-conferencecaptioning",
+	"name": "beaware-conferencecaptioning",
 	"shortname": "ConferenceCaptioning",
 	"description": "Control ConferenceCaptioning's on-device transcription and translation AI service",
 	"version": "1.0.1",
